@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: deployment-frontend
+  name: deployment-frontend
+spec:  
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-frontend
+  strategy:    
+  template:
+    metadata:
+      labels:
+        app: deployment-frontend
+    spec:
+      containers:
+      - image: matheh1995/frontend:1.1
+        name: deployment-frontend
