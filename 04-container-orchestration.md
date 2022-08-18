@@ -6,7 +6,7 @@ You might have heard a thing or two about Kubernetes,
 
 It's probably time anyways,
     managing the lifecycle by hand,
-    of that fleet of containers you're currently running,
+    of that fleet of containers you're currently runing,
     was getting quite tedious.
 
 ### Task
