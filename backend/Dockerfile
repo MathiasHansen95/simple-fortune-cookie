@@ -1,0 +1,10 @@
+FROM golang:1.19.0
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+CMD ["go", "build"] 
+CMD ["go", "run", "backend"] 
+
+
