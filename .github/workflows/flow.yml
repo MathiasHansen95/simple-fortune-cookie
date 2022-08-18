@@ -5,6 +5,10 @@ jobs:
     runs-on: [ubuntu-latest]
     container: golang:1.19.0
     steps:
+      - name: build backend
+        run: go build simple-fortune-cookie/backend
+      - name: build frontend
+        run: go build simple-fortune-cookie/frontend
       - name: run test
         run: go test simple-fortune-cookie/frontend
   
