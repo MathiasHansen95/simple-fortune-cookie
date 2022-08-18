@@ -5,6 +5,8 @@ jobs:
     runs-on: [ubuntu-latest]
     container: golang:1.19.0
     steps:
+      - name: test
+        run: bash pwd
       - name: go to backend
         run: bash cd backend
       - name: build backend
