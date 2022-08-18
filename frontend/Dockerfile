@@ -1,6 +1,6 @@
 FROM golang:1.19.0
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY . .
 COPY ./static ./static/
@@ -10,5 +10,5 @@ RUN chmod +x .
 
 EXPOSE 8080/tcp
 
-CMD ["go", "build"]
-CMD ["go", "run", "frontend"]
+CMD go build
+CMD BACKEND_DNS="backend" go run frontend

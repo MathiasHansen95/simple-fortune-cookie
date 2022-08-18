@@ -1,12 +1,22 @@
 version: "3.1"
+
 services:
+
   backend:
     build: ./backend/
     ports:
       - 9000:9000
+    networks:
+      - dockernetwork
+
   frontend:
     build: ./frontend/
     ports:
       - 8080:8080
     depends_on:
       - backend
+    networks:
+      - dockernetwork
+
+networks:
+  dockernetwork:
