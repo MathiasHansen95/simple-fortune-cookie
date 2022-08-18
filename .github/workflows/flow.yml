@@ -1,0 +1,10 @@
+name: JAVA CI
+on: push
+jobs:
+  test:
+    runs-on: [ubuntu-latest]
+    container: golang:1.19.0
+    steps:
+      - name: run test
+        run: go test simple-fortune-cookie/frontend
+  
