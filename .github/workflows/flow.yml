@@ -6,7 +6,9 @@ jobs:
     container: golang:1.19.0
     steps:
       - name: build backend
-        run: go build /usr/local/go/src/simple-fortune-cookie/backend
+        run: bash cd backend
+        run: go build
+        run: bash cd ..
       - name: build frontend
         run: go build /usr/local/go/src/simple-fortune-cookie/frontend
       - name: run test
