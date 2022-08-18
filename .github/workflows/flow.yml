@@ -5,6 +5,7 @@ jobs:
     runs-on: [ubuntu-latest]
     container: golang:1.19.0
     steps:
+      - uses: actions/checkout@v2
       - name: build backend
         working-directory: backend
         run: go build
