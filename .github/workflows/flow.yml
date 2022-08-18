@@ -5,18 +5,20 @@ jobs:
     runs-on: [ubuntu-latest]
     container: golang:1.19.0
     steps:
-      - name: test
-        run: bash pwd
-      - name: go to backend
-        run: bash cd backend
       - name: build backend
+        working-directory: backend
         run: go build
       - name: run backend
-        run: go run backend
-      - name: go back
-        run: bash cd ..
+        working-directory: backend
+        run: go run backend 
+
       - name: build frontend
-        run: go build /usr/local/go/src/simple-fortune-cookie/frontend
+        working-directory: frontend
+        run: go build 
+      - name: run frontend
+        working-directory: frontend
+        run: go run frontend 
       - name: run test
-        run: go test /usr/local/go/src/simple-fortune-cookie/frontend
+        working-directory: frontend
+        run: go test 
   
