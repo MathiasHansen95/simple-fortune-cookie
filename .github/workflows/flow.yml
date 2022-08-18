@@ -1,0 +1,20 @@
+name: JAVA CI
+on: push
+jobs:
+  test:
+    runs-on: [ubuntu-latest]
+    container: golang:1.19.0
+    steps:
+      - uses: actions/checkout@v2
+      - name: build backend
+        working-directory: backend
+        run: go build
+
+      - name: build frontend
+        working-directory: frontend
+        run: go build 
+    
+      - name: run test
+        working-directory: frontend
+        run: go test 
+  
