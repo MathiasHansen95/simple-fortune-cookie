@@ -9,16 +9,11 @@ jobs:
       - name: build backend
         working-directory: backend
         run: go build
-      - name: run backend
-        working-directory: backend
-        run: go run backend 
 
       - name: build frontend
         working-directory: frontend
         run: go build 
-      - name: run frontend
-        working-directory: frontend
-        run: go run frontend 
+    
       - name: run test
         working-directory: frontend
         run: go test 
